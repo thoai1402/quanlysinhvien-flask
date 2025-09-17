@@ -12,6 +12,7 @@ def init_db():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
             age INTEGER,
+            gioitinh text,
             major TEXT
         )
     """)
@@ -32,6 +33,7 @@ def add():
     if request.method == "POST":
         name = request.form["name"]
         age = request.form["age"]
+         gioitinh = request.form["gioitinh"]
         major = request.form["major"]
 
         conn = sqlite3.connect(DB_NAME)
@@ -53,9 +55,10 @@ def edit(student_id):
     if request.method == "POST":
         name = request.form["name"]
         age = request.form["age"]
+        gioitinh = request.form["gioitinh"]
         major = request.form["major"]
 
-        cur.execute("UPDATE students SET name=?, age=?, major=? WHERE id=?", (name, age, major, student_id))
+        cur.execute("UPDATE students SET name=?, age=?, major=? WHERE id=?", (name, age,gioitinh,major, student_id))
         conn.commit()
         conn.close()
         return redirect(url_for("index"))
