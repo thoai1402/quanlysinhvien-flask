@@ -9,7 +9,8 @@
     <form method="POST">
         <input class="form-control mb-2" type="text" name="name" value="{{ student[1] }}" required>
         <input class="form-control mb-2" type="number" name="age" value="{{ student[2] }}" required>
-        <input class="form-control mb-2" type="text" name="major" value="{{ student[3] }}" required>
+        <input class="form-control mb-2" type="text" name="gioitinh" value="{{ student[3] }}" required>
+        <input class="form-control mb-2" type="text" name="major" value="{{ student[4] }}" required>
         <button class="btn btn-success" type="submit">Cập nhật</button>
         <a class="btn btn-secondary" href="{{ url_for('index') }}">Quay lại</a>
     </form>
