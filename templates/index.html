@@ -9,7 +9,7 @@
     <a href="{{ url_for('add') }}" class="btn btn-primary mb-3">Thêm Sinh viên</a>
     <table class="table table-bordered">
         <tr>
-            <th>ID</th><th>Tên</th><th>Tuổi</th><th>Ngành</th><th>Hành động</th>
+            <th>ID</th><th>Tên</th><th>Tuổi</th><th>Giới tính</th><th>Ngành</th><th>Hành động</th>
         </tr>
         {% for s in students %}
         <tr>
@@ -17,6 +17,7 @@
             <td>{{ s[1] }}</td>
             <td>{{ s[2] }}</td>
             <td>{{ s[3] }}</td>
+            <td>{{ s[4] }}</td>
             <td>
                 <a href="{{ url_for('edit', student_id=s[0]) }}" class="btn btn-warning btn-sm">Sửa</a>
                 <a href="{{ url_for('delete', student_id=s[0]) }}" class="btn btn-danger btn-sm">Xóa</a>
